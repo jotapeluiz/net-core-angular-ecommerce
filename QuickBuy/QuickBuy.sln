@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Domain", "QuickBuy.Domain\QuickBuy.Domain.csproj", "{326B7FB2-7D75-4B5F-A0C9-18220BBAD20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Repository", "QuickBuy.Repository\QuickBuy.Repository.csproj", "{959B9612-6520-4BC6-A659-BF9A4CA7E866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Web", "QuickBuy.Web\QuickBuy.Web.csproj", "{FE812009-88AB-479B-911C-DE96F03E494E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{326B7FB2-7D75-4B5F-A0C9-18220BBAD20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326B7FB2-7D75-4B5F-A0C9-18220BBAD20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326B7FB2-7D75-4B5F-A0C9-18220BBAD20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326B7FB2-7D75-4B5F-A0C9-18220BBAD20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959B9612-6520-4BC6-A659-BF9A4CA7E866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959B9612-6520-4BC6-A659-BF9A4CA7E866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959B9612-6520-4BC6-A659-BF9A4CA7E866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959B9612-6520-4BC6-A659-BF9A4CA7E866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE812009-88AB-479B-911C-DE96F03E494E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE812009-88AB-479B-911C-DE96F03E494E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE812009-88AB-479B-911C-DE96F03E494E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE812009-88AB-479B-911C-DE96F03E494E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
