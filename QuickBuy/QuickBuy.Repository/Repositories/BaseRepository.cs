@@ -1,42 +1,48 @@
+using System.Data;
+using Dapper.Contrib.Extensions;
 using QuickBuy.Domain.Contracts;
+using QuickBuy.Repository.Data;
 
 namespace QuickBuy.Repository.Repositories
 {
 	public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
 	{
-		public BaseRepository()
-		{
+		private readonly IDbConnection _dbConnection;
 
-		}
+		private readonly IDapperContext _dapperContext;
 
-		public void Delete(TEntity entity)
+		public BaseRepository(IDapperContext dapperContext)
 		{
-			throw new NotImplementedException();
+			_dapperContext = dapperContext;
+			_dbConnection = _dapperContext.CreateConnection();
 		}
 
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+			Dispose(true);
+			GC.SuppressFinalize(this);
 		}
 
-		public TEntity Get(int id)
-		{
-			throw new NotImplementedException();
-		}
+		protected virtual void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            if (_dbConnection != null)
+            {
+                _dbConnection.Dispose();
+                _dbConnection.Close();
+            }
+        }
+    }
 
-		public IEnumerable<TEntity> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+    public TEntity Get(int id) => _dbConnection.Get<TEntity>(id);
 
-		public void Insert(TEntity entity)
-		{
-			throw new NotImplementedException();
-		}
+		public IEnumerable<TEntity> GetAll() => _dbConnection.GetAll<TEntity>();
 
-		public void Update(TEntity entity)
-		{
-			throw new NotImplementedException();
-		}
+		public void Insert(TEntity entity) => _dbConnection.Insert(entity);
+
+		public void Update(TEntity entity) => _dbConnection.Update(entity);
+
+		public void Delete(TEntity entity) => _dbConnection.Delete(entity);
 	}
 }
