@@ -14,7 +14,7 @@ namespace QuickBuy.Repository.Repositories
 		public BaseRepository(IDapperContext dapperContext)
 		{
 			_dapperContext = dapperContext;
-			_dbConnection = _dapperContext.CreateConnection();
+			_dbConnection = _dapperContext.CreateDatabaseConnection();
 		}
 
 		public void Dispose()

@@ -4,6 +4,6 @@ namespace QuickBuy.Repository.Data
 {
 	public interface IDapperContext
 	{
-		IDbConnection CreateConnection();
+		IDbConnection CreateDatabaseConnection();
 	}
 }
