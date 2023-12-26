@@ -4,31 +4,26 @@ namespace QuickBuy.Domain.Entities.Payment
 {
 	public class FormPayment : Entity
 	{
-		public string Name
-		{
-			get { return Name ?? string.Empty; }
-			set { Name = value; }
-		}
-		public string Description
-		{
-			get { return Description ?? string.Empty; }
-			set { Description = value; }
-		}
-		public bool IsBill
-		{
-			get { return Id == (int)PaymentType.Bill; }
-		}
-		public bool IsCreditCard
-		{
-			get { return Id == (int)PaymentType.CreditCard; }
-		}
-		public bool IsUndefined
-		{
-			get { return Id == (int)PaymentType.Undefined; }
-		}
+		public string Name { get; set; } = string.Empty;
+
+		public string Description { get; set; } = string.Empty;
+
+		public bool IsBill { get => CheckPaymentType(PaymentType.Bill); }
+
+		public bool IsCreditCard { get => CheckPaymentType(PaymentType.CreditCard); }
+
+		public bool IsUndefined { get => CheckPaymentType(PaymentType.Undefined); }
+
 		public override void Validate()
 		{
-			throw new NotImplementedException();
+			ClearErrors();
+
+			if (string.IsNullOrEmpty(Name))
+			{
+				AddErrorMessage("É preciso informar o nome da forma de pagamento");
+			}
 		}
+
+		private bool CheckPaymentType(PaymentType paymentType) => Id == (int)paymentType;
 	}
 }
