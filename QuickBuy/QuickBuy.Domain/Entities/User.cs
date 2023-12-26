@@ -3,30 +3,21 @@ namespace QuickBuy.Domain.Entities
 	public class User : Entity
 	{
 		public int Id { get; set; }
-		public string Email
-		{
-			get { return Email ?? string.Empty; }
-			set { Email = value; }
-		}
-		public string Password
-		{
-			get { return Password ?? string.Empty; }
-			set { Password = value; }
-		}
-		public string Name
-		{
-			get { return Name ?? string.Empty; }
-			set { Name = value; }
-		}
-		public string LastName
-		{
-			get { return LastName ?? string.Empty; }
-			set { LastName = value; }
-		}
+
+		public string Email { get; set; } = string.Empty;
+
+		public string Password { get; set; } = string.Empty;
+
+		public string Name { get; set; } = string.Empty;
+
+		public string LastName { get; set; } = string.Empty;
+
 		public ICollection<Order>? Orders { get; set; }
 
 		public override void Validate()
 		{
+			ClearErrors();
+
 			if (string.IsNullOrEmpty(Email))
 			{
 				AddErrorMessage("Email não foi informado");
