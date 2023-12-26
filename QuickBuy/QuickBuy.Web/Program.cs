@@ -3,6 +3,7 @@ using FluentMigrator.Runner;
 using QuickBuy.Domain.Contracts;
 using QuickBuy.Repository.Data;
 using QuickBuy.Repository.Data.Migrations;
+using QuickBuy.Repository.Data.Extensions;
 using QuickBuy.Repository.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.MigrateDataBase();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}"

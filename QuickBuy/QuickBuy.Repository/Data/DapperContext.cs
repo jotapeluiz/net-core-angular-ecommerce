@@ -14,11 +14,11 @@ namespace QuickBuy.Repository.Data
 		}
 
 		public IDbConnection CreateDatabaseConnection()
-			=> CreateConnection(_configuration.GetConnectionString("DatabaseApp"));
+			=> CreateConnection(_configuration.GetConnectionString("DatabaseApp") ?? string.Empty);
 
 		public IDbConnection CreateMasterConnection()
-			=> CreateConnection(_configuration.GetConnectionString("Master"));
+			=> CreateConnection(_configuration.GetConnectionString("Master") ?? string.Empty);
 
-		private IDbConnection CreateConnection(string connectionName) => new NpgsqlConnection(connectionName);
+		private static NpgsqlConnection CreateConnection(string connectionName) => new(connectionName);
 	}
 }

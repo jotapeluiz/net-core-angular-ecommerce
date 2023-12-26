@@ -1,6 +1,7 @@
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using QuickBuy.Repository.Data.Migrations;
 
 namespace QuickBuy.Repository.Data.Extensions
 {

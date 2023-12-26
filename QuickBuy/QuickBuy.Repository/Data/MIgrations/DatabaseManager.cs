@@ -4,9 +4,9 @@ namespace QuickBuy.Repository.Data.Migrations
 {
     public class DatabaseManager
     {
-        private readonly DapperContext _dapperContext;
+        private readonly IDapperContext _dapperContext;
 
-        public DatabaseManager(DapperContext dapperContext)
+        public DatabaseManager(IDapperContext dapperContext)
         {
             _dapperContext = dapperContext;
         }
