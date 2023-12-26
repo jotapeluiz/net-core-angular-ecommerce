@@ -2,8 +2,6 @@ namespace QuickBuy.Domain.Entities
 {
 	public class Order : Entity
 	{
-		public int Id { get; set; }
-
 		public DateTime Date { get; set; }
 
 		public DateTime ExpectedDeliveryDate { get; set; }

@@ -4,7 +4,6 @@ namespace QuickBuy.Domain.Entities.Payment
 {
 	public class FormPayment : Entity
 	{
-		public int Id { get; set; }
 		public string Name
 		{
 			get { return Name ?? string.Empty; }
